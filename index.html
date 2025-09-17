@@ -1,19 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Car Dealership</title>
+
+  <style>
+    /* layout */
+    :root { font-family: system-ui, Arial, sans-serif; color: #222; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; padding: 0; }
+
+    /* page container */
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* nav */
+    nav {
+      background: #f3f3f3;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+    }
+    nav a {
+      display: inline-block;
+      margin-right: 12px;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: #333;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+    nav a:hover,
+    nav a:focus { background: rgba(0,0,0,0.06); outline: none; }
+    nav a.active { background: #333; color: #fff; }
+
+    /* sections */
+    section {
+      padding: 32px 0;
+      border-bottom: 1px solid #eee;
+    }
+    h1, h2 { margin: 0 0 12px 0; }
+    p { margin: 0 0 10px 0; line-height: 1.5; }
+
+    /* services list */
+    .services-list { margin: 8px 0 0 0; padding-left: 20px; }
+
+    /* gallery */
+    .gallery {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 10px;
+    }
+    figure { margin: 0; }
+    .gallery img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      display: block;
+    }
+    figcaption { text-align: center; margin-top: 8px; font-size: 0.95rem; color: #444; }
+
+    /* small screens */
+    @media (max-width: 420px) {
+      .wrap { padding: 12px; }
+      nav a { margin-right: 8px; padding: 6px 10px; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to my website</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, doloribus, cumque quod architecto culpa aspernatur ex provident eveniet et libero commodi distinctio earum vero sunt ad, facilis fugit. Facilis, unde!</p>
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="wrap">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Cars</a>
+    </div>
+  </nav>
 
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, doloribus, cumque quod architecto culpa aspernatur ex provident eveniet et libero commodi distinctio earum vero sunt ad, facilis fugit. Facilis, unde!</p>
-<h1>Welcome to my website</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, doloribus, cumque quod architecto culpa aspernatur ex provident eveniet et libero commodi distinctio earum vero sunt ad, facilis fugit. Facilis, unde!</p>
+  <main class="wrap">
+    <!-- HOME -->
+    <section id="home" aria-labelledby="home-heading">
+      <h1 id="home-heading">Car Dealership Page</h1>
+      <p>
+        Welcome to our car dealership. Browse a wide selection of new and pre-owned cars,
+        SUVs, and trucks at competitive prices. Our team offers clear financing options
+        and professional maintenance support to help you pick the right vehicle.
+      </p>
+    </section>
 
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, doloribus, cumque quod architecto culpa aspernatur ex provident eveniet et libero commodi distinctio earum vero sunt ad, facilis fugit. Facilis, unde!</p>
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>
+        We are a local dealership focused on honest pricing and reliable service.
+        Our staff inspects every vehicle and documents condition before sale.
+      </p>
+    </section>
 
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Services</h2>
+      <ul class="services-list">
+        <li>New and used car sales</li>
+        <li>Vehicle financing and paperwork help</li>
+        <li>Maintenance, repair, and parts</li>
+        <li>Trade-in appraisal</li>
+      </ul>
+    </section>
+
+    <!-- GALLERY / CARS -->
+    <section id="gallery" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading">Our Cars</h2>
+
+      <div class="gallery">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900" alt="Red sedan - front view">
+          <figcaption>Red sedan</figcaption>
+        </figure>
+
+          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=900" alt="White pickup truck">
+          <figcaption>White pickup</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
